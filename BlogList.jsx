@@ -3,7 +3,7 @@ import BlogItem from './BlogItem'
 
 const BlogList = ({ posts }) => {
   const blogItems = posts.map((obj, key) =>
-    React.createElement(BlogItem, Object.assign(obj, { key: key }))
+    React.createElement(BlogItem, Object.assign({}, obj, { key: key }))
   );
 
   return React.createElement('div', null, blogItems);
