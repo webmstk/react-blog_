@@ -9,4 +9,12 @@ const BlogList = ({ posts }) => {
   return React.createElement('div', null, blogItems);
 };
 
+BlogList.propTypes = {
+  posts: React.PropTypes.array
+};
+
+BlogList.defaultProps = {
+  posts: []
+};
+
 export default BlogList;
