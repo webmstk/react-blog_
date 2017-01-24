@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Image = props =>
-  React.createElement('img', props);
+  <img {...props} />
 
 Image.propTypes = {
   src:    React.PropTypes.string.isRequired,

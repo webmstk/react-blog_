@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TextBox = props =>
-  React.createElement('span', null, props.children);
+  <span>{props.children}</span>
 
 TextBox.propTypes = {
   children: React.PropTypes.string.isRequired

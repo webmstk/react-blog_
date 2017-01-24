@@ -42,7 +42,7 @@ class BlogPage extends React.Component {
 
   render() {
     const { posts } = this.state;
-    return React.createElement(BlogList, { posts });
+    return <BlogList {...posts} />;
   }
 }
 
