@@ -1,31 +1,15 @@
 import React from 'react';
 
-class Like extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { rating: props.rating };
-    this.update = this.update.bind(this);
-  }
-
-  update() {
-    this.setState({ rating: ++this.state.rating });
-  }
-
-  render() {
-    const { rating } = this.state;
-
-    return (
-      <div>
-        <div>Рейтинг: {rating}</div>
-        <button onClick={this.update}>нравится</button>
-      </div>
-    );
-  }
-}
+const Like = ({ rating, like }) => (
+  <div>
+    <div>Рейтинг: {rating}</div>
+    <button onClick={like}>нравится</button>
+  </div>
+);
 
 Like.propTypes = {
-  rating: React.PropTypes.number
+  rating: React.PropTypes.number,
+	like:   React.PropTypes.func
 };
 
 Like.defaultProps = {

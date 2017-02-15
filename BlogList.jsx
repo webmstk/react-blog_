@@ -1,9 +1,9 @@
 import React from 'react'
 import BlogItem from './BlogItem'
 
-const BlogList = ({ posts }) => {
-  const blogItems = posts.map((obj, key) =>
-    <BlogItem {...obj, key: key} />
+const BlogList = ({ posts, like }) => {
+  const blogItems = posts.map(obj =>
+    <BlogItem post={obj} key={obj.id} like={() => like(obj.id)} />
   );
 
   return <div>{blogItems}</div>;
