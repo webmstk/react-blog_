@@ -9,7 +9,7 @@ const Like = ({ rating, like }) => (
 
 Like.propTypes = {
   rating: React.PropTypes.number,
-	like:   React.PropTypes.func
+  like:   React.PropTypes.func
 };
 
 Like.defaultProps = {
