@@ -1,7 +1,15 @@
 import React from 'react';
 
-const Image = props =>
-  <img {...props} />
+import { Image as ImageUI } from 'semantic-ui-react';
+
+
+const Image = ({ src, width, height, alt  }) =>
+  <ImageUI
+    src    = { src }
+    width  = { width }
+    height = { height }
+    alt    = { alt }
+  />;
 
 Image.propTypes = {
   src:    React.PropTypes.string.isRequired,
@@ -13,5 +21,6 @@ Image.propTypes = {
 Image.defaultProps = {
   alt: 'изображение к посту'
 };
+
 
 export default Image;
