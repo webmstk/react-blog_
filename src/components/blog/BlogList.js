@@ -1,12 +1,12 @@
 import React    from 'react';
-import BlogItem from './BlogItem';
+import BlogPost from './BlogPost';
 
 import { Item } from 'semantic-ui-react';
 
 
 const BlogList = ({ posts, like }) => {
-  const blogItems = posts.map(obj =>
-    <BlogItem
+  const items = posts.map(obj =>
+    <BlogPost
       post = { obj }
       key  = { obj.id }
       like = { () => like(obj.id) }
@@ -14,7 +14,7 @@ const BlogList = ({ posts, like }) => {
   );
 
   return (
-    <Item.Group>{ blogItems }</Item.Group>
+    <Item.Group>{ items }</Item.Group>
   );
 };
 
