@@ -4,6 +4,8 @@ import request from 'superagent';
 import BlogList from './blog/BlogList';
 import PieChart from './blog/PieChart';
 
+import { postsPath } from 'helpers/routes';
+
 import { cloneDeep } from 'lodash';
 import { BLOG_NAME } from 'constants/Blog';
 
@@ -27,8 +29,23 @@ class Posts extends React.Component {
     request.get(
       'http://localhost:3001',
       {},
-      (err, res) => this.setState({ posts: res.body })
-    );
+      (err, res) => {
+        this.setState({ posts: res.body });
+        this.setPostsUrl(res.body);
+      }
+    ).end;
+  }
+
+  setPostsUrl () {
+    const posts = cloneDeep(this.state.posts);
+
+    const newPosts = posts.map(post => {
+      post.url = postsPath(post.id);
+
+      return post;
+    });
+
+    this.setState({ posts: newPosts });
   }
 
   like (postId) {

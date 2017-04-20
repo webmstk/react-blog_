@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import request from 'superagent';
 
+import { HOST } from 'constants/Blog';
+
 import BlogPost from './blog/BlogPost';
 
 import { Item } from 'semantic-ui-react';
@@ -22,7 +24,7 @@ class Post extends React.Component {
 
   fetchPost () {
     request.get(
-      `http://localhost:3001/post/${this.props.params.id}`,
+      `${HOST}/post/${this.props.params.id}`,
       {},
       (err, res) => this.setState({ post: res.body })
     );
